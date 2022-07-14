@@ -26,13 +26,14 @@ CGame::~CGame() {}
 
 CGame::CGame(const std::string &name, const Vector &screen_size)
 {
-    m_name = name;
+    m_root_object = new CGameObject();
+    m_root_object->setName(name);
     m_screen_size = screen_size;
 }
 
 void CGame::run()
 {
-    m_window = new sf::RenderWindow(sf::VideoMode(m_screen_size.x, m_screen_size.y), m_name);
+    m_window = new sf::RenderWindow(sf::VideoMode(m_screen_size.x, m_screen_size.y), m_root_object->getName());
     init();
 
     sf::Event event;

@@ -23,7 +23,7 @@ class CGame
 private:
     sf::RenderWindow *m_window = NULL;
     Vector m_screen_size;
-    std::string m_name;
+    CGameObject *m_root_object = NULL;
 
 protected:
     void virtual init();
