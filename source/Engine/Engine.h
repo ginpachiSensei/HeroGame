@@ -2,6 +2,21 @@
 #include "SFML/Graphics.hpp"
 #include <string>
 #include "Container.h"
+#include <list>
+
+class CGameObject
+{
+private:
+    std::string m_name;
+    Vector m_pos, m_size;
+    std::list<CGameObject *> m_objects;
+
+public:
+    CGameObject();
+    virtual ~CGameObject();
+    void setName(const std::string &name);
+    const std::string &getName() const;
+};
 
 class CGame
 {

@@ -1,5 +1,25 @@
 #include "Engine.h"
 
+CGameObject::CGameObject() {}
+CGameObject::~CGameObject()
+{
+    for (auto &obj : m_objects)
+    {
+        delete obj;
+    }
+    m_objects.clear();
+}
+void CGameObject::setName(const std::string &name)
+{
+    m_name = name;
+}
+const std::string &CGameObject::getName() const
+{
+    return m_name;
+}
+
+//---------------------------------------------------------------------------------------------------------
+
 void CGame::init() {}
 
 CGame::~CGame() {}
