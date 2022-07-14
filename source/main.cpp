@@ -1,6 +1,7 @@
-#include <iostream>
+#include "HeroGame.h"
+
 int main(int argc, char const *argv[])
 {
-    std::cout << "hello world";
+    HeroGame::instance()->run();
     return 0;
 }
