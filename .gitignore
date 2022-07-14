@@ -1,0 +1,6 @@
+[Bb]uild/
+CMakeLists.txt.user
+.vs/
+.vscode
+*.autosave
+.idea/
