@@ -4,7 +4,7 @@ void CGame::init() {}
 
 CGame::~CGame() {}
 
-CGame::CGame(const std::string &name, const screen_size &screen_size)
+CGame::CGame(const std::string &name, const Vector &screen_size)
 {
     m_name = name;
     m_screen_size = screen_size;
