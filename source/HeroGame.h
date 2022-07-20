@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Engine/Engine.h"
+#include "Engine/GameEngine.h"
 
 class HeroGame : public CGame
 {
