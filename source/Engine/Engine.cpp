@@ -37,6 +37,9 @@ void CGame::run()
     init();
 
     sf::Event event;
+    sf::Clock clock;
+    sf::Time accumulator = sf::Time::Zero;
+    const sf::Time ups = sf::seconds(1.f / 60.f);
 
     while (true) // game loop
     {
@@ -48,5 +51,16 @@ void CGame::run()
                 exit(0);
             }
         }
+        sf::Time elapsedTime = clock.restart();
+        accumulator += elapsedTime;
+
+        while (accumulator > ups)
+        {
+            accumulator -= ups;
+            sf::sleep(sf::milliseconds(10));
+        }
+
+        m_window->clear(sf::Color::Black);
+        m_window->display();
     }
 }
