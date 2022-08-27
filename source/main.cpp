@@ -2,6 +2,6 @@
 
 int main(int argc, char const *argv[])
 {
-    HeroGame::instance()->run();
+    CHeroGame::instance()->run();
     return 0;
 }

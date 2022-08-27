@@ -1,8 +1,8 @@
 #include "HeroGame.h"
 
-HeroGame *HeroGame::s_instance = NULL;
+CHeroGame *CHeroGame::s_instance = NULL;
 
-HeroGame::HeroGame() : CGame("HeroGame", {1280, 720})
+CHeroGame::CHeroGame() : CGame("HeroGame", {1280, 720})
 {
     const std::string texture_dir = HERO_RES_PATH + "Textures/";
     for (std::string texture : {"sky"})
@@ -12,13 +12,13 @@ HeroGame::HeroGame() : CGame("HeroGame", {1280, 720})
     }
 }
 
-HeroGame::~HeroGame() {}
+CHeroGame::~CHeroGame() {}
 
-HeroGame *HeroGame::instance()
+CHeroGame *CHeroGame::instance()
 {
     if (s_instance == NULL)
-        s_instance = new HeroGame();
+        s_instance = new CHeroGame();
     return s_instance;
 }
 
-void HeroGame::init() {}
+void CHeroGame::init() {}

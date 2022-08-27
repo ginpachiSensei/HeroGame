@@ -4,14 +4,14 @@
 
 const std::string HERO_RES_PATH = "res/";
 
-class HeroGame : public CGame
+class CHeroGame : public CGame
 {
 private:
-    HeroGame();
-    static HeroGame *s_instance;
+    CHeroGame();
+    static CHeroGame *s_instance;
     virtual void init() override;
 
 public:
-    static HeroGame *instance();
-    ~HeroGame();
+    static CHeroGame *instance();
+    ~CHeroGame();
 };
