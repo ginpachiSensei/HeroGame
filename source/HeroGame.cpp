@@ -30,10 +30,14 @@ void CHeroGame::init()
     getRootObject()->addObject(m_gui_object = new CHeroGUI());
 }
 
+//----------------------------------------------------------------------------------------
+
 CHeroGame &HeroGame()
 {
     return *CHeroGame::instance();
 }
+
+//----------------------------------------------------------------------------------------
 
 CHeroGUI::CHeroGUI()
 {
