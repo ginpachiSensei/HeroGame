@@ -62,6 +62,9 @@ public:
     const std::string &getLevelName() const;
     void loadFromFile(const std::string &filepath);
 
+public:
+    virtual void draw(sf::RenderWindow *render_window) override;
+
 private:
     sf::View m_view;
     const float scale_factor = 1.5f;

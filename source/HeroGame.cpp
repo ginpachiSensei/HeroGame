@@ -121,3 +121,10 @@ CHeroGameScene::CHeroGameScene(const std::string &filepath)
     loadFromFile(filepath);
     init();
 }
+
+void CHeroGameScene::draw(sf::RenderWindow *render_window)
+{
+    render_window->setView(m_view);
+    CGameObject::draw(render_window);
+    render_window->setView(render_window->getDefaultView());
+}
