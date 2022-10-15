@@ -4,3 +4,4 @@ CMakeLists.txt.user
 .vscode
 *.autosave
 .idea/
+res/test_asssets

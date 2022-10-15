@@ -115,11 +115,20 @@ void CHeroGameScene::init()
     m_view.setSize(screen_size);
     CHeroGame::instance()->eventManager().subscribe(this);
 }
+const std::string &CHeroGameScene::getLevelName() const
+{
+    return m_level_name;
+}
 
 CHeroGameScene::CHeroGameScene(const std::string &filepath)
 {
     loadFromFile(filepath);
     init();
+}
+
+CHeroGameScene::~CHeroGameScene()
+{
+    CHeroGame::instance()->eventManager().unsubcribe(this);
 }
 
 void CHeroGameScene::draw(sf::RenderWindow *render_window)

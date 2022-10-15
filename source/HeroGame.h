@@ -32,7 +32,7 @@ private:
     std::string m_current_level_name;
 };
 
-// CHeroGame &HeroGame();
+CHeroGame &HeroGame();
 
 // enum class GUIState
 // {
@@ -62,8 +62,10 @@ public:
     const std::string &getLevelName() const;
     void loadFromFile(const std::string &filepath);
 
-public:
+protected:
+    //     virtual void update(int delta_time) override;
     virtual void draw(sf::RenderWindow *render_window) override;
+    //     virtual void events(const sf::Event &event) override;
 
 private:
     sf::View m_view;
