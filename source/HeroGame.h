@@ -21,7 +21,13 @@ private:
     {
         main_menu
     } m_game_state = GameState::main_menu;
+    int m_lives = 3;
+    int m_score = 0;
+    int m_delay_timer = 0;
+    int m_game_time = 30000;
     std::vector<CGameObject *> m_scene_stack;
+    void updateGUI();
+    void reset();
     void clearScene();
     void loadLevel(const std::string &level_name);
     CGameObject *m_current_scene = NULL;
@@ -33,26 +39,6 @@ private:
 };
 
 CHeroGame &HeroGame();
-
-// enum class GUIState
-// {
-//     normal,
-//     status,
-//     menu,
-//     gameover
-// };
-
-class CHeroGUI : public CGameObject
-{
-public:
-    CHeroGUI();
-
-protected:
-    void draw(sf::RenderWindow *render_window) override;
-
-private:
-    CLabel *m_game_logo;
-};
 
 class CHeroGameScene : public CGameObject
 {
@@ -73,4 +59,38 @@ private:
     const Vector screen_size = {1280 / scale_factor, 720 / scale_factor};
     std::string m_level_name;
     void init();
+};
+
+enum class GUIState
+{
+    normal,
+    status,
+    menu,
+    gameover
+};
+
+class CHeroGUI : public CGameObject
+{
+public:
+    CHeroGUI();
+    ~CHeroGUI();
+    void setScore(int value);
+    void setGameTime(int time);
+    void setLevelName(const std::string &string);
+    void setLives(int value);
+    void update(int delta_time) override;
+    void pause(bool ispaused);
+    void setState(GUIState state);
+    CLabel *createLabel();
+
+protected:
+    void draw(sf::RenderWindow *render_window) override;
+    GUIState m_state;
+
+private:
+    CLabel *m_score_lab,
+        *m_game_logo,
+        *m_timer,
+        *m_level_name,
+        *m_lives;
 };
